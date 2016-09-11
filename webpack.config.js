@@ -10,9 +10,9 @@ module.exports = {
     watch: true,
     watchOptions: {
         aggregateTimeout: 100
-    }
-    ,
+    },
     plugins: [
         new webpack.OldWatchingPlugin()
-    ]
+    ],
+    devtool:"source-map"
 };
