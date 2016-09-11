@@ -1,13 +1,13 @@
 'use strict';
 
-const webpack = require("webpack");
+const webpack = require('webpack');
 const NODE_ENV = process.env.NODE_ENV || 'development';
 
 module.exports = {
-    entry: "./home",
+    entry: './home',
     output: {
-        filename: "build.js",
-        library: "home"
+        filename: 'build.js',
+        library: 'home'
     },
     watch: NODE_ENV == 'development',
     watchOptions: {
@@ -19,5 +19,5 @@ module.exports = {
             NODE_ENV: JSON.stringify(NODE_ENV)
         })
     ],
-    devtool: NODE_ENV == 'development' ? "source-map" : null
+    devtool: NODE_ENV == 'development' ? 'source-map' : null
 };
