@@ -19,5 +19,13 @@ module.exports = {
             NODE_ENV: JSON.stringify(NODE_ENV)
         })
     ],
-    devtool: NODE_ENV == 'development' ? 'source-map' : null
+    devtool: NODE_ENV == 'development' ? 'source-map' : null,
+    module: {
+        loaders: [{
+            test: /\.js$/,
+            //Or use file .babelrc
+            // loader: 'babel?presets[]=es2015'
+            loader: 'babel'
+        }]
+    }
 };
