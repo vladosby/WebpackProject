@@ -23,7 +23,6 @@ module.exports = {
 
     resolve: {
         modulesDirectories: ['node_modules'],
-        //sometimes single quotes don't work
         extensions: ['', '.js']
     },
     resolveLoader: {
