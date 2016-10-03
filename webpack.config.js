@@ -20,6 +20,18 @@ module.exports = {
         })
     ],
     devtool: NODE_ENV == 'development' ? 'source-map' : null,
+
+    resolve: {
+        modulesDirectories: ['node_modules'],
+        //sometimes single quotes don't work
+        extensions: ['', '.js']
+    },
+    resolveLoader: {
+        modulesDirectories: ['node_modules'],
+        moduleTemplates: ['*-loader'],
+        extensions: ['', '.js']
+    },
+    
     module: {
         loaders: [{
             test: /\.js$/,
