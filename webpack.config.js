@@ -24,6 +24,9 @@ module.exports = {
         new webpack.OldWatchingPlugin(),
         new webpack.DefinePlugin({
             NODE_ENV: JSON.stringify(NODE_ENV)
+        }),
+        new webpack.optimize.CommonsChunkPlugin({
+            name: 'common'
         })
     ],
     devtool: NODE_ENV == 'development' ? 'source-map' : null,
