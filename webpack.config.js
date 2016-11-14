@@ -20,6 +20,7 @@ module.exports = {
         aggregateTimeout: 100
     },
     plugins: [
+        new webpack.NoErrorsPlugin(),
         new webpack.OldWatchingPlugin(),
         new webpack.DefinePlugin({
             NODE_ENV: JSON.stringify(NODE_ENV)
