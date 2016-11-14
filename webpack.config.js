@@ -4,10 +4,16 @@ const webpack = require('webpack');
 const NODE_ENV = process.env.NODE_ENV || 'development';
 
 module.exports = {
-    entry: './home',
+    context: __dirname + '/frontend',
+    entry: {
+        home: './home',
+        about: './about'
+        //welcome cannot be connected because home and about have dependencies on it.
+    },
     output: {
-        filename: 'build.js',
-        library: 'home'
+        path: __dirname + '/public',
+        filename: '[name].js',
+        library: '[name]'
     },
     watch: NODE_ENV == 'development',
     watchOptions: {
@@ -30,7 +36,7 @@ module.exports = {
         moduleTemplates: ['*-loader'],
         extensions: ['', '.js']
     },
-    
+
     module: {
         loaders: [{
             test: /\.js$/,
@@ -41,14 +47,14 @@ module.exports = {
     }
 };
 
-if(NODE_ENV == 'production') {
+if (NODE_ENV == 'production') {
     module.exports.plugins.push(
         new webpack.optimize.UglifyJsPlugin({
-        compress: {
-            warnings: false,
-            drop_console: true,
-            unsafe: true
-        }
-    })
+            compress: {
+                warnings: false,
+                drop_console: true,
+                unsafe: true
+            }
+        })
     );
 }
