@@ -11,11 +11,13 @@ module.exports = {
         //public/common.js will contain common parts and content of common.js
         //also we can write  ['./welcome' ,'./common']
         // will be exported last module - './common'
-        common: './common'
+        common: './common',
+        loginApp: './loginApp'
         //welcome cannot be connected because home and about have dependencies on it.
     },
     output: {
         path: __dirname + '/public',
+        publicPath: '/public/',
         filename: '[name].js',
         library: '[name]'
     },
