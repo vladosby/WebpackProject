@@ -7,7 +7,11 @@ module.exports = {
     context: __dirname + '/frontend',
     entry: {
         home: './home',
-        about: './about'
+        about: './about',
+        //public/common.js will contain common parts and content of common.js
+        //also we can write  ['./welcome' ,'./common']
+        // will be exported last module - './common'
+        common: './common'
         //welcome cannot be connected because home and about have dependencies on it.
     },
     output: {
